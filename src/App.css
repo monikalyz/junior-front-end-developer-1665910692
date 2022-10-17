@@ -1,38 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f5f7;
+  font-family: 'Poppins', sans-serif;
+}
+
 .App {
-  text-align: center;
+  width: 100%;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
-  flex-direction: column;
+  height: 89%;
+}
+
+.your-tasks {
+  background-color: #fff;
+  width: 25%;
+  margin: 70px 10px 10px 20px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.your-tasks h2 {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  padding: 28.5px;
+  border-bottom: 1px solid #f4f5f7;
+}
+
+.business-context {
+  background-color: #fff;
+  width: 80%;
+  height: 100%;
+  margin: 70px 10px 10px 10px;
+  border-radius: 10px;
+}
+
+.context-header {
+  display: flex;
+  padding: 20px 20px 0px 50px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom: 1px solid #f4f5f7;
 }
 
-.App-link {
-  color: #61dafb;
+.title-part {
+  border-bottom: 2px solid #0165ff;
+  display: flex;
+  padding-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title-part img {
+  width: 23px;
+  height: 23px;
+  margin: 10px 5px 5px 0px;
+}
+
+.business-context h2 {
+  color: #0165ff;
+  font-size: 14px;
+  margin: 10px 5px 10px 5px ;
+}
+
+.all-tasks {
+  padding: 10px 0 0 0;
+}
+
+.task-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 7px;
+}
+
+.task-title img {
+  width: 16px;
+  margin-left: 25px;
+}
+
+.task-title h3 {
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 2%;
 }
