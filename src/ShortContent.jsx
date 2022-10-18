@@ -1,6 +1,6 @@
 const ShortContent = (props) => {
 
-    const {author, created_at, title, content, status} = props;
+    const {author, created_at, title, content, status, id} = props;
 
     const divShadow = {
         boxShadow: '2px 2px 9px #c5c5c5',
@@ -16,7 +16,7 @@ const ShortContent = (props) => {
     }
    
     return ( 
-        <div className="single-short-content" style={status === "active" ? divShadow : null || status === "inactive" ? divStyles : null} >
+        <div className="single-short-content" style={status === "active" ? divShadow : null || status === "inactive" ? divStyles : null} onClick={() => props.changeStatus('active', id)}>
                 
                 <div className="author-date">
                     {status === "new" ? <label className="new">NEW</label> : null }

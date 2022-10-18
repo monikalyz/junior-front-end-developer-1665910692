@@ -8,9 +8,15 @@ import BookReviewFeature from "./BookReviewFeature";
 import arrow from "./img/arrow.svg";
 import check from "./img/check.svg";
 import lock from "./img/lock.svg";
-
+import { useState } from "react";
 
 const TasksWrapper = () => {
+
+    const [visited, setVisited] = useState([]);
+
+    const onClick = elementVisited => {
+        setVisited(current => [...current, elementVisited]);
+    };
 
     return ( 
         <div className="wrapper">
@@ -18,36 +24,36 @@ const TasksWrapper = () => {
             <div className="your-tasks">
                 <h2>YOUR TASKS</h2>
                 <div className="all-tasks">
-                <Link to="/application-setup" >
+                <Link to="/application-setup" onClick={() => onClick('application-setup')}>
                     <div className="task-title">
-                    <img src={check} alt="arrow-icon"/>
+                        <img src={visited.includes('application-setup') ? arrow : check} alt="arrow-icon" />
                 
                         <h3 className="status-complited">
                             Application Setup
                         </h3>
                     </div>
                 </Link>
-                <Link to="/static-books-list" >
+                <Link to="/static-books-list" onClick={() => onClick('static-books-list')}>
                     <div className="task-title">
-                    <img src={check} alt="arrow-icon"/>
+                        <img src={visited.includes('static-books-list') ? arrow : check} alt="arrow-icon" />
                 
                         <h3>
                             Static Books List
                         </h3>
                     </div>
                 </Link>
-                <Link to="/administration-panel" >
+                <Link to="/administration-panel" onClick={() => onClick('administration-panel')} >
                     <div className="task-title">
-                    <img src={check} alt="arrow-icon"/>
+                        <img src={visited.includes('administration-panel') ? arrow : check} alt="arrow-icon" />
                 
                         <h3>
                             Administration Panel
                         </h3>
                     </div>
                 </Link>
-                <Link to="/connect-admin-with-frontend" >
+                <Link to="/connect-admin-with-frontend" onClick={() => onClick('connect-admin-with-frontend')}>
                     <div className="task-title">
-                    <img src={arrow} alt="arrow-icon"/>
+                        <img src={visited.includes('connect-admin-with-frontend') ? arrow : check} alt="arrow-icon" />
                 
                         <h3>
                             Connect Admin with Frontend
