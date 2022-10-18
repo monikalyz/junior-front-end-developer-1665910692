@@ -16,7 +16,7 @@ body {
 
 .wrapper {
   display: flex;
-  height: 89%;
+  height: 100vh;
 }
 
 .your-tasks {
@@ -89,4 +89,109 @@ body {
   font-weight: 500;
   font-family: 'Poppins', sans-serif;
   margin-left: 2%;
+}
+
+.whole-contents {
+  display: flex;
+  flex-direction: row;
+}
+
+.author-date {
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.author,
+.created-at,
+.dot {
+  margin: 15px 10px 10px 0px;
+  color: rgb(110, 110, 110);
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.single-short-content {
+  height: 150px;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 10px;
+  width: 400px;
+  padding-left: 20px;
+}
+
+.short-text {
+  display: -webkit-box;
+  width: 350px;
+  overflow:hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: 13px;
+  color: rgb(110, 110, 110);
+}
+
+.short-contents {
+  background-color: rgb(248, 248, 248);
+  margin: 0px 5px 5px 5px;
+  border-radius: 0 0 0 10px;
+  height: 98%;
+  margin-bottom: 5px;
+
+}
+
+.new {
+  background-color: #0165ff;
+  display: block;
+  padding: 5px;
+  width: 45px;
+  height: 25px;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  text-align: center;
+  margin: 11px 15px 0 0px;
+}
+
+.full-content-title {
+  font-size: 22px;
+  font-weight: 600;
+  display: block;
+  padding: 20px 20px 20px 35px;
+}
+
+.full-content-items {
+  padding: 0 35px;
+}
+
+.full-content-author {
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.full-content-day,
+.full-content-month,
+.full-content-time {
+  font-size: 12px;
+  color: rgb(110, 110, 110);
+}
+
+.full-content-month{
+  margin: 0 10px;
+}
+
+.full-content-text {
+  font-size: 14px;
+  color: rgb(110, 110, 110);
+  margin-top: 20px;
 }
