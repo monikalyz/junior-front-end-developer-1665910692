@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/junior-front-end-developer-1665910692/static/css/main.763a9a7b.css",
+    "main.js": "/junior-front-end-developer-1665910692/static/js/main.3da97c3e.js",
+    "static/js/787.a48bc194.chunk.js": "/junior-front-end-developer-1665910692/static/js/787.a48bc194.chunk.js",
+    "static/media/hayek.png": "/junior-front-end-developer-1665910692/static/media/hayek.3b7514dc5b9be59c46ae.png",
+    "static/media/zimmer.png": "/junior-front-end-developer-1665910692/static/media/zimmer.9c0121b909c7f61cda57.png",
+    "static/media/doe.png": "/junior-front-end-developer-1665910692/static/media/doe.2a79a2f053150a57cd50.png",
+    "static/media/lock.svg": "/junior-front-end-developer-1665910692/static/media/lock.835f36fd5698674eba6043d4b545ce6f.svg",
+    "static/media/arrow.svg": "/junior-front-end-developer-1665910692/static/media/arrow.d6088f5f97fd20274d821335d28f1c18.svg",
+    "static/media/check.svg": "/junior-front-end-developer-1665910692/static/media/check.399b030642eb2a23d71c237e5a4685bc.svg",
+    "index.html": "/junior-front-end-developer-1665910692/index.html",
+    "static/media/mark.svg": "/junior-front-end-developer-1665910692/static/media/mark.88f7ec3f176f63b5e00637f8e488d462.svg",
+    "main.763a9a7b.css.map": "/junior-front-end-developer-1665910692/static/css/main.763a9a7b.css.map",
+    "main.3da97c3e.js.map": "/junior-front-end-developer-1665910692/static/js/main.3da97c3e.js.map",
+    "787.a48bc194.chunk.js.map": "/junior-front-end-developer-1665910692/static/js/787.a48bc194.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.763a9a7b.css",
+    "static/js/main.3da97c3e.js"
+  ]
+}
