@@ -1,184 +1,68 @@
-import BusinessContext from "./BusinessContext";
-import YourTasks from "./YourTasks";
 import mark from "./img/mark.svg";
+import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
+import ApplicationSetup from "./ApplicationSetup";
+import StaticBooksList from "./StaticBooksList";
+import AdministrationPanel from "./AdministrationPanel";
+import ConnectAdminWithFrontend from "./ConnectAdminWithFrontend";
+import BookReviewFeature from "./BookReviewFeature";
+import arrow from "./img/arrow.svg";
+import check from "./img/check.svg";
+import lock from "./img/lock.svg";
+
 
 const TasksWrapper = () => {
 
-    const now = new Date();
-    const day = now.getDate()
-    const month = now.toLocaleDateString('en',{
-        month: 'short',
-        
-    })
-
-    const usertasks = [
-        {
-            id: 1,
-            type: "text",
-            title: "Application Setup",
-            status: "complited",
-            arrayOfBusinessContexts: [ 
-                {
-                    id: 1,
-                    title: "Lorem ipsum dolor sit amet.", 
-                    content: "Praesent elementum facilisis leo vel fringilla est. Eget nunc scelerisque viverra mauris. Et malesuada fames ac turpis egestas integer. Non sodales neque sodales ut etiam sit amet nisl. Donec pretium vulputate sapien nec sagittis. Ac turpis egestas maecenas pharetra convallis posuere morbi.", 
-                    author: "Salma Hayek", 
-                    created_at:`${month} ${day}`, 
-                    status: "new"
-                }, 
-                {
-                    id: 2, 
-                    title: "Nisi vitae suscipit.", 
-                    content: "Eget mauris pharetra et ultrices neque ornare aenean. Est velit egestas dui id ornare arcu odio ut sem. Volutpat ac tincidunt vitae semper quis lectus nulla at. Dignissim sodales ut eu sem. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Amet purus gravida quis blandit turpis. ", 
-                    author: "Teresa Zimmer", 
-                    created_at:`${month} ${day}`, 
-                    status: "active"
-                }, 
-                {
-                    id: 3, 
-                    title: "Sed libero enim sed faucibus.", 
-                    content: "Diam volutpat commodo sed egestas egestas fringilla phasellus. Elementum sagittis vitae et leo. Tortor posuere ac ut consequat semper viverra nam libero. A arcu cursus vitae congue mauris rhoncus aenean. Est ultricies integer quis auctor. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est.", 
-                    author: "Sue Doe", 
-                    created_at:`${month} ${day}`, 
-                    status: "inactive"
-                }
-            ]
-        },
-        {   id: 2,
-            type: "text",
-            status: "complited",
-            title: "Static Book List",
-            arrayOfBusinessContexts: [
-                {
-                    id: 1, 
-                    title: "Lorem ipsum dolor sit amet.", 
-                    content: "Praesent elementum facilisis leo vel fringilla est. Eget nunc scelerisque viverra mauris. Et malesuada fames ac turpis egestas integer. Non sodales neque sodales ut etiam sit amet nisl. Donec pretium vulputate sapien nec sagittis. Ac turpis egestas maecenas pharetra convallis posuere morbi.", 
-                    author: "Salma Hayek", 
-                    created_at:`${month} ${day}`, 
-                    status: "new"
-                }, 
-                {
-                    id: 2, 
-                    title: "Nisi vitae suscipit.", 
-                    content: "Eget mauris pharetra et ultrices neque ornare aenean. Est velit egestas dui id ornare arcu odio ut sem. Volutpat ac tincidunt vitae semper quis lectus nulla at. Dignissim sodales ut eu sem. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Amet purus gravida quis blandit turpis. ", 
-                    author: "Teresa Zimmer", 
-                    created_at:`${month} ${day}`, status: "active"
-                }, 
-                {
-                    id: 3, 
-                    title: "Sed libero enim sed faucibus.", 
-                    content: "Diam volutpat commodo sed egestas egestas fringilla phasellus. Elementum sagittis vitae et leo. Tortor posuere ac ut consequat semper viverra nam libero. A arcu cursus vitae congue mauris rhoncus aenean. Est ultricies integer quis auctor. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est.", 
-                    author: "Sue Doe", 
-                    created_at:`${month} ${day}`, 
-                    status: "inactive"
-                }
-            ]
-        },
-        {   id: 3,
-            type: "text",
-            status: "complited",
-            title: "Administration Panel",
-            arrayOfBusinessContexts: [
-                {
-                    id: 1, 
-                    title: "Lorem ipsum dolor sit amet.", 
-                    content: "Praesent elementum facilisis leo vel fringilla est. Eget nunc scelerisque viverra mauris. Et malesuada fames ac turpis egestas integer. Non sodales neque sodales ut etiam sit amet nisl. Donec pretium vulputate sapien nec sagittis. Ac turpis egestas maecenas pharetra convallis posuere morbi.", 
-                    author: "Salma Hayek", 
-                    created_at:`${month} ${day}`, 
-                    status: "new"
-                }, 
-                {   
-                    id: 2, 
-                    title: "Nisi vitae suscipit.", 
-                    content: "Eget mauris pharetra et ultrices neque ornare aenean. Est velit egestas dui id ornare arcu odio ut sem. Volutpat ac tincidunt vitae semper quis lectus nulla at. Dignissim sodales ut eu sem. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Amet purus gravida quis blandit turpis. ", 
-                    author: "Teresa Zimmer", 
-                    created_at:`${month} ${day}`, status: "active"
-                }, 
-                {
-                    id: 3, 
-                    title: "Sed libero enim sed faucibus.", 
-                    content: "Diam volutpat commodo sed egestas egestas fringilla phasellus. Elementum sagittis vitae et leo. Tortor posuere ac ut consequat semper viverra nam libero. A arcu cursus vitae congue mauris rhoncus aenean. Est ultricies integer quis auctor. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est.", 
-                    author: "Sue Doe", 
-                    created_at:`${month} ${day}`, 
-                    status: "inactive"
-                }
-            ]
-        },
-        {   id: 4,
-            type: "text",
-            status: "active",
-            title: "Connect Admin with Frontend",
-            arrayOfBusinessContexts: [ 
-                {
-                    id: 1, 
-                    title: "Lorem ipsum dolor sit amet.", 
-                    content: "Praesent elementum facilisis leo vel fringilla est. Eget nunc scelerisque viverra mauris. Et malesuada fames ac turpis egestas integer. Non sodales neque sodales ut etiam sit amet nisl. Donec pretium vulputate sapien nec sagittis. Ac turpis egestas maecenas pharetra convallis posuere morbi.", 
-                    author: "Salma Hayek", 
-                    created_at:`${month} ${day}`, 
-                    status: "new"
-                }, 
-                {
-                    id: 2, 
-                    title: "Nisi vitae suscipit.", 
-                    content: "Eget mauris pharetra et ultrices neque ornare aenean. Est velit egestas dui id ornare arcu odio ut sem. Volutpat ac tincidunt vitae semper quis lectus nulla at. Dignissim sodales ut eu sem. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Amet purus gravida quis blandit turpis. ", 
-                    author: "Teresa Zimmer", 
-                    created_at:`${month} ${day}`, 
-                    status: "active"
-                }, 
-                {
-                    id: 3, 
-                    title: "Sed libero enim sed faucibus.", 
-                    content: "Diam volutpat commodo sed egestas egestas fringilla phasellus. Elementum sagittis vitae et leo. Tortor posuere ac ut consequat semper viverra nam libero. A arcu cursus vitae congue mauris rhoncus aenean. Est ultricies integer quis auctor. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est.", 
-                    author: "Sue Doe", 
-                    created_at:`${month} ${day}`, 
-                    status: "inactive"
-                }
-            ]
-        },
-        {   id: 5,
-            type: "text",
-            status: "blocked",
-            title: "Book Review Feature",
-            arrayOfBusinessContexts: [
-                {
-                    id: 1, 
-                    title: "Lorem ipsum dolor sit amet.", 
-                    content: "Praesent elementum facilisis leo vel fringilla est. Eget nunc scelerisque viverra mauris. Et malesuada fames ac turpis egestas integer. Non sodales neque sodales ut etiam sit amet nisl. Donec pretium vulputate sapien nec sagittis. Ac turpis egestas maecenas pharetra convallis posuere morbi.", 
-                    author: "Salma Hayek", 
-                    created_at:`${month} ${day}`, 
-                    status: "new"
-                }, 
-                {
-                    id: 2, 
-                    title: "Nisi vitae suscipit.", 
-                    content: "Eget mauris pharetra et ultrices neque ornare aenean. Est velit egestas dui id ornare arcu odio ut sem. Volutpat ac tincidunt vitae semper quis lectus nulla at. Dignissim sodales ut eu sem. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Amet purus gravida quis blandit turpis. ", 
-                    author: "Teresa Zimmer", 
-                    created_at:`${month} ${day}`, 
-                    status: "active"
-                }, 
-                {
-                    id: 3, 
-                    title: "Sed libero enim sed faucibus.", 
-                    content: "Diam volutpat commodo sed egestas egestas fringilla phasellus. Elementum sagittis vitae et leo. Tortor posuere ac ut consequat semper viverra nam libero. A arcu cursus vitae congue mauris rhoncus aenean. Est ultricies integer quis auctor. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est.", 
-                    author: "Sue Doe", 
-                    created_at:`${month} ${day}`, 
-                    status: "inactive"
-                }
-            ]
-        }      
-    ]
-
     return ( 
         <div className="wrapper">
+             <Router>
             <div className="your-tasks">
                 <h2>YOUR TASKS</h2>
                 <div className="all-tasks">
-                {usertasks.map((task) => (
-                    <YourTasks 
-                        key={task.id}
-                        {...task}
-                    />
-                ))}
+                <Link to="/application-setup" >
+                    <div className="task-title">
+                    <img src={check} alt="arrow-icon"/>
+                
+                        <h3 className="status-complited">
+                            Application Setup
+                        </h3>
+                    </div>
+                </Link>
+                <Link to="/static-books-list" >
+                    <div className="task-title">
+                    <img src={check} alt="arrow-icon"/>
+                
+                        <h3>
+                            Static Books List
+                        </h3>
+                    </div>
+                </Link>
+                <Link to="/administration-panel" >
+                    <div className="task-title">
+                    <img src={check} alt="arrow-icon"/>
+                
+                        <h3>
+                            Administration Panel
+                        </h3>
+                    </div>
+                </Link>
+                <Link to="/connect-admin-with-frontend" >
+                    <div className="task-title">
+                    <img src={arrow} alt="arrow-icon"/>
+                
+                        <h3>
+                            Connect Admin with Frontend
+                        </h3>
+                    </div>
+                </Link>
+                <Link to="/book-review-feature" >
+                    <div className="task-title">
+                    <img src={lock} alt="arrow-icon"/>
+                
+                        <h3>
+                            Book Review Feature
+                        </h3>
+                    </div>
+                </Link>
                 </div>
             </div>
             <div className="business-context">
@@ -188,13 +72,15 @@ const TasksWrapper = () => {
                         <h2>BUSINESS CONTEXT</h2>
                     </div>
                 </div>
-                    {usertasks.map((task) => (
-                    <BusinessContext 
-                        key={task.id}
-                        {...task}
-                    />
-                ))}
+                <Routes>
+                    <Route path="/application-setup"  exact={"exact"} element={<ApplicationSetup />}/>
+                    <Route path="/static-books-list"  element={<StaticBooksList />}/>
+                    <Route path="/administration-panel" element={<AdministrationPanel />}/>
+                    <Route path="/connect-admin-with-frontend" element={<ConnectAdminWithFrontend />}/>
+                    <Route path="/book-review-feature" element={<BookReviewFeature />}/>
+                    </Routes>
             </div>
+            </Router>
         </div>
      );
 }

@@ -152,7 +152,7 @@ body {
 .new {
   background-color: #0165ff;
   display: block;
-  padding: 5px;
+  padding: 4px;
   width: 45px;
   height: 25px;
   color: white;
@@ -194,4 +194,9 @@ body {
   font-size: 14px;
   color: rgb(110, 110, 110);
   margin-top: 20px;
+}
+
+.blocked-content {
+  /* text-align: center; */
+  padding: 50px;
 }
